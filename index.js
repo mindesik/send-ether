@@ -9,7 +9,8 @@ const web3 = require('web3')
 const express = require('express')
 const app = express()
 
-app.get('/', (req, res) => {
+app.get('/', (req, res) => res.status(404).send())
+app.get('/send', (req, res) => {
   if (typeof req.query.address === 'undefined') {
     return res.status(400).send({
       success: false,
