@@ -16,7 +16,7 @@ HTTP_PORT=1337
 
 ## Usage
 
-`curl http://127.0.0.1:1337?address=0x...&value=0.01`
+`curl http://127.0.0.1:1337/send?address=0x...&value=0.01`
 
 ## Response
 
