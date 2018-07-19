@@ -9,6 +9,8 @@ Ask to transfer some ether via http
 ```
 JSON_RPC=http://127.0.0.1:8545
 ACCOUNT_ADDRESS=0x...
+PRIVATE_KEY=...
+HTTP_PORT=1337
 ```
 
 ##
