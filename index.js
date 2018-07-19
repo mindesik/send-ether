@@ -1,11 +1,11 @@
 require('dotenv').config()
 
-const jsonRpc = process.env.JSON_RPC
+const infuraKey = process.env.INFURA_KEY
 const privKey = process.env.PRIVATE_KEY
 const addressFrom = process.env.ACCOUNT_ADDRESS
 const httpPort = process.env.HTTP_PORT
 const Web3 = require('web3')
-const web3 = new Web3(new Web3.providers.HttpProvider(jsonRpc))
+const web3 = new Web3(new Web3.providers.HttpProvider('https://kovan.infura.io/' + infuraKey))
 const Tx = require('ethereumjs-tx')
 
 const account = web3.eth.accounts.privateKeyToAccount(privKey.indexOf('0x') === 0 ? privKey : '0x' + privKey)
@@ -57,7 +57,7 @@ app.get('/', (req, res) => {
     web3.eth.sendSignedTransaction('0x' + transaction.serialize().toString('hex')).once('transactionHash', (hash) => {
       res.send({
         success: true,
-        tx: 'https://etherscan.io/tx/' + hash,
+        tx: 'https://kovan.etherscan.io/tx/' + hash,
       })
       console.info('transactionHash', 'https://etherscan.io/tx/' + hash)
     }).once('receipt', (receipt) => {
