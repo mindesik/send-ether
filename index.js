@@ -47,7 +47,7 @@ app.get('/send', (req, res) => {
   }
 
   let address = req.query.address,
-    wei = parseFloat(req.query.value) * 10e18
+    wei = web3.utils.toWei(parseFloat(req.query.value), 'ether')
   
   send({
     from: addressFrom,
