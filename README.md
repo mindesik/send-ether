@@ -1,6 +1,6 @@
-# Ask for Ether
+# Send Ether
 
-Ask to transfer some ether via http.
+Ask to transfer some ether.
 KOVAN testnet only!
 
 ## Configuration
