@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
   if (!web3.utils.isAddress(req.query.address)) {
     return res.status(400).send({
       success: false,
-      error: 'Address is invalid',
+      error: 'Invalid address',
     })
   }
 
