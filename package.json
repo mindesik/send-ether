@@ -1,8 +1,8 @@
 {
-  "name": "ask-for-ether",
+  "name": "send-ether",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://misterpaladin@github.com/misterpaladin/ask-for-ether",
+  "repository": "https://misterpaladin@github.com/misterpaladin/send-ether",
   "author": "Min De Sik <ds@codesmith.ru>",
   "license": "MIT",
   "dependencies": {
