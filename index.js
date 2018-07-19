@@ -4,6 +4,7 @@ const addressFrom = process.env.ACCOUNT_ADDRESS
 const httpPort = process.env.HTTP_PORT
 const send = require('./lib/send')
 const ethLimit = process.env.ETH_LIMIT
+const web3 = require('web3')
 
 const express = require('express')
 const app = express()
@@ -13,6 +14,13 @@ app.get('/', (req, res) => {
     return res.status(400).send({
       success: false,
       error: 'Address is required',
+    })
+  }
+
+  if (!web3.utils.isAddress(req.query.address)) {
+    return res.status(400).send({
+      success: false,
+      error: 'Address is invalid',
     })
   }
 
